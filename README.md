@@ -26,17 +26,75 @@ Each drone instance is launched through `sim_vehicle.py`, assigning unique **ins
 | Slave 1 | 2 | 14551 | 14561 |
 | Slave 2 | 3 | 14552 | 14562 |
 
-Example commands:
 
-```bash
-# Terminal 1 – Master Drone
-cd ~/ardupilot/ArduCopter
-python3 ~/ardupilot/Tools/autotest/sim_vehicle.py -I0 --sysid 1 --out=udp:127.0.0.1:14550 --out=udp:127.0.0.1:14560
+---
 
-# Terminal 2 – Slave Drone 1
-cd ~/ardupilot/ArduCopter
-python3 ~/ardupilot/Tools/autotest/sim_vehicle.py -I1 --sysid 2 --out=udp:127.0.0.1:14551 --out=udp:127.0.0.1:14561
 
-# Terminal 3 – Slave Drone 2
-cd ~/ardupilot/ArduCopter
-python3 ~/ardupilot/Tools/autotest/sim_vehicle.py -I2 --sysid 3 --out=udp:127.0.0.1:14552 --out=udp:127.0.0.1:14562
+---
+
+## Tools and Technologies
+| Tool | Function |
+|------|-----------|
+| **ArduPilot SITL** | Simulates multiple drone instances in a virtual environment |
+| **MAVProxy** | Acts as the ground control station (GCS) and message router |
+| **pymavlink** | Provides Python API for MAVLink protocol-level control |
+| **Python 3** | Used to implement automation and formation logic |
+| **UDP Ports** | Enables dedicated communication channels for each UAV instance |
+
+---
+
+## Applications
+- **Swarm Robotics** – Multi-UAV coordination for mapping, search, and surveillance missions.  
+- **Formation Control Research** – Study of distributed UAV communication, offsets, and synchronization.  
+- **Autonomous Systems Education** – Demonstrates MAVLink-level inter-UAV communication and control.  
+- **Simulation Testing** – Enables debugging and validation of multi-drone algorithms before real-world deployment.  
+
+---
+
+## Advantages
+- **Fully Virtual Environment** – Safe, cost-free experimentation without physical hardware.  
+- **Highly Scalable** – New UAVs can be added by simply incrementing system IDs and ports.  
+- **Protocol-Level Understanding** – Direct use of MAVLink messages deepens knowledge of UAV communication.  
+- **Automation Compatible** – Can integrate AI or trajectory planning for coordinated maneuvers.  
+- **Research-Grade Platform** – Realistic UAV network behavior for academic or industrial research.  
+
+---
+
+## Summary
+This project demonstrates the foundation of a **multi-UAV formation control system** using ArduPilot SITL, MAVProxy, and pymavlink.  
+Three simulated drones—one master and two slaves—communicate through UDP endpoints, managed and automated via Python scripts.  
+The first phase establishes synchronized arming and telemetry verification across all UAVs.  
+Future stages will expand this setup into full **formation maintenance and coordinated flight**, contributing to swarm robotics and cooperative UAV control research.
+
+---
+
+## Future Improvements
+- Implement real-time position broadcast from master to slaves.  
+- Add PID-based distance and velocity control for stable formation.  
+- Integrate obstacle avoidance using LiDAR or rangefinders.  
+- Extend to dynamic formations (V-shape, grid) with N-drone scalability.  
+- Transition to Hardware-in-the-Loop (HIL) or real UAV implementation.
+
+---
+
+## Tech Stack Summary
+| Category | Tools/Components |
+|-----------|------------------|
+| **Simulation** | ArduPilot SITL, MAVProxy |
+| **Control Interface** | pymavlink (Python) |
+| **Programming Language** | Python 3 |
+| **Communication** | UDP (MAVLink Telemetry) |
+| **Environment** | Linux / Ubuntu |
+| **Output** | MAVProxy Consoles, SITL Windows, Terminal Logs |
+
+---
+
+## Author
+**Rishabh Singh Rawat**  
+B.Tech Electronics Engineering (IoT)  
+JC Bose Institute of Technology, YMCA  
+Intern @ BotLab Dynamics | Ahuja Radios  
+
+
+
+
