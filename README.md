@@ -1,5 +1,15 @@
 # Multi-UAV Formation Flight using MAVLink and ArduPilot SITL
 
+## System Architecture
+
+<p align="center">
+  <a href="formation-flight-flow.png">
+    <img src="formation-flight-flow.png" alt="System Flow Diagram" width="800"/>
+  </a>
+  <br>
+  <em>Click image to view full size</em>
+</p>
+
 ## Introduction
 This project demonstrates the implementation of **formation flight control** using multiple simulated drones in **ArduPilot SITL (Software-In-The-Loop)**.  
 Three virtual UAVs—one *master* and two *slaves*—are launched in separate instances of SITL, each with a unique MAVLink system ID.  
